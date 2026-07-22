@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a7e8326c-3039-4f75-93fa-adc263198e1c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="6.513264132962946E-13" />
+      <entry key="MS500" value="0.010712046421029282" />
+      <entry key="S2" value="1.9513101990844444" />
+      <entry key="S5" value="7.609362931060197" />
+      <entry key="S10" value="14.744297820836849" />
+      <entry key="S30" value="25.968944941351957" />
+      <entry key="S60" value="30.463945670650354" />
+      <entry key="M2" value="33.09900793481809" />
+      <entry key="M5" value="35.89122292837878" />
+      <entry key="M10" value="44.83847104058025" />
+      <entry key="M15" value="60.115536688496086" />
+      <entry key="M30" value="107.64426653876686" />
+      <entry key="H1" value="163.81474788006162" />
+      <entry key="H2" value="208.12279562632472" />
+      <entry key="H4" value="237.00730934898806" />
+      <entry key="D1" value="386.8376346750588" />
+      <entry key="W1" value="557.2196711940686" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000157968890968" />
+      <entry key="S2" value="1.0630438739869" />
+      <entry key="S5" value="1.3310222275988493" />
+      <entry key="S10" value="1.5753453116162932" />
+      <entry key="S30" value="1.8317181766766302" />
+      <entry key="S60" value="1.9119858423663352" />
+      <entry key="M2" value="1.9549795549163456" />
+      <entry key="M5" value="1.98385710174138" />
+      <entry key="M10" value="2.0774576671528053" />
+      <entry key="M15" value="2.3007805875841836" />
+      <entry key="M30" value="3.098300073313499" />
+      <entry key="H1" value="4.0943814858767755" />
+      <entry key="H2" value="4.89372724610215" />
+      <entry key="H4" value="5.420837022023543" />
+      <entry key="D1" value="8.505497485720571" />
+      <entry key="W1" value="12.065085944671887" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="4.566578414615972E-10" />
+      <entry key="MS500" value="0.023874701290865614" />
+      <entry key="S2" value="2.26799441169551" />
+      <entry key="S5" value="8.321162706573446" />
+      <entry key="S10" value="15.831432662116644" />
+      <entry key="S30" value="27.559934280867335" />
+      <entry key="S60" value="32.241624431596584" />
+      <entry key="M2" value="34.982827024284944" />
+      <entry key="M5" value="37.842349988127346" />
+      <entry key="M10" value="46.88832578788839" />
+      <entry key="M15" value="62.38552372609091" />
+      <entry key="M30" value="110.70829499268753" />
+      <entry key="H1" value="167.8809121553874" />
+      <entry key="H2" value="212.99804839978853" />
+      <entry key="H4" value="242.41750485699137" />
+      <entry key="D1" value="395.34057776343974" />
+      <entry key="W1" value="569.2842795597037" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Eie5CHbIxCMSaWi4Fu5nADiPN2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.BasicMovements.executor": "Run",
+    "Python.FaceTracking.executor": "Run",
+    "Python.ImageCapture.executor": "Run",
+    "Python.KeyPressModule.executor": "Run",
+    "Python.KeyboardControl.executor": "Run",
+    "Python.KeyboardControlIImageCapture.executor": "Run",
+    "Python.Mapping.executor": "Run",
+    "Python.PIDControl.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/johnl/PycharmProjects/PythonProject/Resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\johnl\PycharmProjects\PythonProject\Resources" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7e8326c-3039-4f75-93fa-adc263198e1c" name="Changes" comment="" />
+      <created>1780665632222</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780665632222</updated>
+      <workItem from="1780665633400" duration="1376000" />
+      <workItem from="1780682964630" duration="406000" />
+      <workItem from="1780683803377" duration="6636000" />
+      <workItem from="1780775220590" duration="11524000" />
+      <workItem from="1783122335509" duration="283000" />
+      <workItem from="1784609791150" duration="72000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PythonProject$Mapping.coverage" NAME="Mapping Coverage Results" MODIFIED="1780892091463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$FaceTracking.coverage" NAME="FaceTracking Coverage Results" MODIFIED="1780895321875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$KeyPressModule.coverage" NAME="KeyPressModule Coverage Results" MODIFIED="1780688726821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$KeyboardControlIImageCapture.coverage" NAME="KeyboardControlIImageCapture Coverage Results" MODIFIED="1780891339228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$BasicMovements.coverage" NAME="BasicMovements Coverage Results" MODIFIED="1780689559076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$ImageCapture.coverage" NAME="ImageCapture Coverage Results" MODIFIED="1780686991294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonProject$KeyboardControl.coverage" NAME="KeyboardControl Coverage Results" MODIFIED="1780889983063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
