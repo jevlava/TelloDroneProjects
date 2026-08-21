@@ -1,0 +1,244 @@
+import cv2
+import mediapipe as mp
+import time
+import os
+import math
+import numpy as np
+from djitellopy import Tello
+
+# --- MediaPipe Setup ---
+mp_face_detection = mp.solutions.face_detection
+mp_hands = mp.solutions.hands
+mp_drawing = mp.solutions.drawing_utils
+
+CAPTURE_DIR = "tello_captures"
+PANO_DIR = "panorama_captures"
+os.makedirs(CAPTURE_DIR, exist_ok=True)
+os.makedirs(PANO_DIR, exist_ok=True)
+
+
+# --- Gesture Recognition ---
+def is_peace_sign(hand_landmarks):
+    landmarks = hand_landmarks.landmark
+    index_ext = landmarks[8].y < landmarks[6].y
+    middle_ext = landmarks[12].y < landmarks[10].y
+    ring_curled = landmarks[16].y > landmarks[14].y
+    pinky_curled = landmarks[20].y > landmarks[18].y
+    return index_ext and middle_ext and ring_curled and pinky_curled
+
+
+def is_okay_sign(hand_landmarks):
+    landmarks = hand_landmarks.landmark
+    hand_scale = math.hypot(landmarks[0].x - landmarks[9].x, landmarks[0].y - landmarks[9].y)
+    if hand_scale == 0:
+        return False
+
+    tip_dist = math.hypot(landmarks[8].x - landmarks[4].x, landmarks[8].y - landmarks[4].y) / hand_scale
+    circle_formed = tip_dist < 0.22
+    middle_ext = landmarks[12].y < landmarks[10].y
+    ring_ext = landmarks[16].y < landmarks[14].y
+    pinky_ext = landmarks[20].y < landmarks[18].y
+    upright_hand = landmarks[0].y > landmarks[9].y
+
+    return circle_formed and middle_ext and ring_ext and pinky_ext and upright_hand
+
+
+# --- Fast Single Image 360 Panorama Routine ---
+def execute_360_panorama(tello, frame_read):
+    tello.send_rc_control(0, 0, 0, 0)
+    print("--- STARTING FAST 360 PANORAMA ---")
+
+    images = []
+    steps = 8
+    angle_per_step = 45
+
+    # 1. Faster Image Collection Sequence
+    for i in range(steps):
+        # Reduced sleep time for fast frame acquisition
+        time.sleep(0.25)
+        raw_rgb = frame_read.frame
+        if raw_rgb is not None:
+            bgr_frame = cv2.cvtColor(raw_rgb, cv2.COLOR_RGB2BGR)
+            images.append(bgr_frame)
+
+        # Faster rotation impulse
+        tello.rotate_clockwise(angle_per_step)
+        time.sleep(0.35)
+
+    print("--- BUILDING PANORAMA ---")
+    timestamp = time.strftime("%Y%m%d_%H%M%S")
+    single_pano_path = os.path.join(PANO_DIR, f"panorama_360_{timestamp}.jpg")
+
+    # 2. Fast Mode OpenCV Stitcher
+    stitcher = cv2.Stitcher_create(cv2.Stitcher_SCANS)  # SCANS mode is optimized for speed
+    status, stitched_img = stitcher.stitch(images)
+
+    if status == cv2.Stitcher_OK:
+        cv2.imwrite(single_pano_path, stitched_img)
+        print(f"SUCCESS: Feature-stitched 360 saved -> {single_pano_path}")
+    else:
+        # Fallback: Merge slices horizontally into 1 image strip instantly
+        cropped_slices = []
+        for img in images:
+            h, w, _ = img.shape
+            crop = img[:, int(w * 0.12):int(w * 0.88)]  # Fast edge crop
+            cropped_slices.append(crop)
+
+        single_pano_strip = np.hstack(cropped_slices)
+        cv2.imwrite(single_pano_path, single_pano_strip)
+        print(f"SUCCESS: Fast Panoramic strip saved -> {single_pano_path}")
+
+
+# --- PID Active Face Tracking ---
+PID_YAW = [0.4, 0.0, 0.1]
+PID_UPDOWN = [0.4, 0.0, 0.1]
+p_error_x, p_error_y = 0, 0
+
+
+def track_face(tello, face_center, frame_center):
+    global p_error_x, p_error_y
+
+    if face_center is None:
+        tello.send_rc_control(0, 0, 0, 0)
+        return
+
+    error_x = face_center[0] - frame_center[0]
+    error_y = frame_center[1] - face_center[1]
+
+    speed_yaw = int(PID_YAW[0] * error_x + PID_YAW[2] * (error_x - p_error_x))
+    speed_updown = int(PID_UPDOWN[0] * error_y + PID_UPDOWN[2] * (error_y - p_error_y))
+
+    speed_yaw = max(-40, min(40, speed_yaw))
+    speed_updown = max(-40, min(40, speed_updown))
+
+    p_error_x, p_error_y = error_x, error_y
+    tello.send_rc_control(0, 0, speed_updown, speed_yaw)
+
+
+# --- HUD / Screen Overlay Guide Function ---
+def draw_hud_guide(frame, battery, tracking_active):
+    h, w, _ = frame.shape
+
+    # Semi-transparent HUD overlay panel (Top Left)
+    overlay = frame.copy()
+    cv2.rectangle(overlay, (10, 10), (220, 135), (0, 0, 0), -1)
+    cv2.addWeighted(overlay, 0.55, frame, 0.45, 0, frame)
+
+    # Status Indicators
+    batt_color = (0, 255, 0) if battery > 30 else (0, 0, 255)
+    cv2.putText(frame, f"BATTERY: {battery}%", (20, 30),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.45, batt_color, 2)
+
+    track_str = "TRACKING: LOCKED" if tracking_active else "TRACKING: SEARCHING"
+    track_color = (0, 255, 0) if tracking_active else (0, 165, 255)
+    cv2.putText(frame, track_str, (20, 50),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.4, track_color, 1)
+
+    # Gestures Guide List
+    cv2.putText(frame, "--- GESTURES GUIDE ---", (20, 75),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.38, (255, 255, 255), 1)
+    cv2.putText(frame, "[V] Peace (✌️) : Snap Photo", (20, 92),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.35, (200, 255, 200), 1)
+    cv2.putText(frame, "[OK] Sign (👌) : 360 Panorama", (20, 107),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.35, (200, 255, 200), 1)
+    cv2.putText(frame, "[Q] / [ESC]   : Land Drone", (20, 122),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.35, (200, 200, 255), 1)
+
+    # Crosshair in frame center
+    cx, cy = w // 2, h // 2
+    cv2.line(frame, (cx - 10, cy), (cx + 10, cy), (255, 255, 255), 1)
+    cv2.line(frame, (cx, cy - 10), (cx, cy + 10), (255, 255, 255), 1)
+
+
+# --- Drone Initialization ---
+tello = Tello()
+tello.connect()
+print(f"Connected! Battery: {tello.get_battery()}%")
+
+tello.streamon()
+frame_read = tello.get_frame_read()
+
+tello.takeoff()
+time.sleep(1)
+
+last_capture_time = 0
+
+with mp_face_detection.FaceDetection(min_detection_confidence=0.5) as face_detection, \
+        mp_hands.Hands(min_detection_confidence=0.6, min_tracking_confidence=0.6) as hands:
+    while True:
+        raw_rgb = frame_read.frame
+        if raw_rgb is None or raw_rgb.size == 0:
+            continue
+
+        bgr_frame = cv2.cvtColor(raw_rgb, cv2.COLOR_RGB2BGR)
+        display_frame = cv2.resize(bgr_frame, (480, 360))
+        h, w, _ = display_frame.shape
+        frame_center = (w // 2, h // 2)
+
+        rgb_for_mp = cv2.cvtColor(display_frame, cv2.COLOR_BGR2RGB)
+
+        face_results = face_detection.process(rgb_for_mp)
+        hand_results = hands.process(rgb_for_mp)
+
+        face_center = None
+
+        # Detect Face
+        if face_results.detections:
+            detection = face_results.detections[0]
+            bboxC = detection.location_data.relative_bounding_box
+            cx = int((bboxC.xmin + bboxC.width / 2) * w)
+            cy = int((bboxC.ymin + bboxC.height / 2) * h)
+            face_center = (cx, cy)
+
+            cv2.rectangle(display_frame,
+                          (int(bboxC.xmin * w), int(bboxC.ymin * h)),
+                          (int((bboxC.xmin + bboxC.width) * w), int((bboxC.ymin + bboxC.height) * h)),
+                          (0, 255, 0), 2)
+            cv2.circle(display_frame, face_center, 4, (0, 0, 255), -1)
+
+        # Track Face
+        track_face(tello, face_center, frame_center)
+
+        # Detect Gestures
+        peace_detected, ok_detected = False, False
+        if hand_results.multi_hand_landmarks:
+            for hand_landmarks in hand_results.multi_hand_landmarks:
+                mp_drawing.draw_landmarks(display_frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+                if is_peace_sign(hand_landmarks):
+                    peace_detected = True
+                elif is_okay_sign(hand_landmarks):
+                    ok_detected = True
+
+        curr_time = time.time()
+
+        # Single Snap Photo
+        if peace_detected and (curr_time - last_capture_time > 3.0):
+            last_capture_time = curr_time
+            filename = os.path.join(CAPTURE_DIR, f"snap_{int(curr_time)}.jpg")
+            cv2.imwrite(filename, bgr_frame)
+            cv2.putText(display_frame, "PHOTO SAVED!", (w - 150, 30),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+
+        # Fast 360 Panorama
+        elif ok_detected and (curr_time - last_capture_time > 4.0):
+            last_capture_time = curr_time
+            cv2.putText(display_frame, "CAPTURING 360 PANORAMA...", (150, 30),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 2)
+            cv2.imshow("Tello Control Center", display_frame)
+            cv2.waitKey(200)
+
+            execute_360_panorama(tello, frame_read)
+
+        # Draw HUD overlay
+        draw_hud_guide(display_frame, tello.get_battery(), face_center is not None)
+
+        cv2.imshow("Tello Control Center", display_frame)
+
+        if cv2.waitKey(1) & 0xFF in (ord('q'), 27):
+            break
+
+tello.send_rc_control(0, 0, 0, 0)
+tello.land()
+tello.streamoff()
+cv2.destroyAllWindows()
