@@ -1,5 +1,5 @@
 from djitellopy import tello
-import KeyPressModule as kp
+from BasicPrograms import KeyPressModule as kp
 import numpy as np
 from time import sleep
 import cv2

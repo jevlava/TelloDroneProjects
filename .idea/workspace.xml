@@ -4,7 +4,44 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7e8326c-3039-4f75-93fa-adc263198e1c" name="Changes" comment="" />
+    <list default="true" id="a7e8326c-3039-4f75-93fa-adc263198e1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BasicPrograms/KeyboardControlIImageCapture.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PID/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PID/pid_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PID/ui_dashboard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/camera_features/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/camera_features/flight_routines.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/camera_features/gesture_detector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/camera_features/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/camera_features/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gesture_tracker/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gesture_tracker/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gesture_tracker/utilities/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gesture_tracker/utilities/gestures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gesture_tracker/utilities/recorder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gesture_tracker/utilities/tracker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vision_filter/hand_tracker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vision_filter/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicMovements.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FaceTracking.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ImageCapture.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageFilter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyPressModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/BasicPrograms/KeyPressModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/BasicPrograms/KeyboardControl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KeyboardControlIImageCapture.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mapping.py" beforeDir="false" afterPath="$PROJECT_DIR$/BasicPrograms/Mapping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PIDControl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonBasics/drone_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/drone_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonBasics/drone_renderer.py" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/drone_renderer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonBasics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonBasics/ui_elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/ui_elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonBasics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/haarcascade_eye.xml" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/Resources/haarcascade_eye.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/haarcascade_frontalface_default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/Resources/haarcascade_frontalface_default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face_landmarker.task" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/face_landmarker.task" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hand_landmarker.task" beforeDir="false" afterPath="$PROJECT_DIR$/movement_GUI/hand_landmarker.task" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/peace_sign_captures/peace_capture_20260722_013525.jpg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,63 +57,75 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jevlava&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jevlava/TelloDroneProjects.git&quot;,
+    &quot;accountId&quot;: &quot;4ecc2558-2e00-480d-95f0-b32c859a9b6c&quot;
+  }
+}</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="6.513264132962946E-13" />
-      <entry key="MS500" value="0.010712046421029282" />
-      <entry key="S2" value="1.9513101990844444" />
-      <entry key="S5" value="7.609362931060197" />
-      <entry key="S10" value="14.744297820836849" />
-      <entry key="S30" value="25.968944941351957" />
-      <entry key="S60" value="30.463945670650354" />
-      <entry key="M2" value="33.09900793481809" />
-      <entry key="M5" value="35.89122292837878" />
-      <entry key="M10" value="44.83847104058025" />
-      <entry key="M15" value="60.115536688496086" />
-      <entry key="M30" value="107.64426653876686" />
-      <entry key="H1" value="163.81474788006162" />
-      <entry key="H2" value="208.12279562632472" />
-      <entry key="H4" value="237.00730934898806" />
-      <entry key="D1" value="386.8376346750588" />
-      <entry key="W1" value="557.2196711940686" />
+      <entry key="MS100" value="1.0032171524112015" />
+      <entry key="MS500" value="1.3173177215049512" />
+      <entry key="S2" value="1.7505395487571855" />
+      <entry key="S5" value="1.8915576539016565" />
+      <entry key="S10" value="1.9442233072222144" />
+      <entry key="S30" value="1.981050971370043" />
+      <entry key="S60" value="1.9904802422410517" />
+      <entry key="M2" value="1.9956033350674462" />
+      <entry key="M5" value="2.0675823963363587" />
+      <entry key="M10" value="2.515388358087578" />
+      <entry key="M15" value="3.133833436251877" />
+      <entry key="M30" value="4.7057762602573945" />
+      <entry key="H1" value="6.46882637543522" />
+      <entry key="H2" value="14.116475171584453" />
+      <entry key="H4" value="51.971065304202746" />
+      <entry key="D1" value="311.68666274962646" />
+      <entry key="W1" value="562.35157803716" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000157968890968" />
-      <entry key="S2" value="1.0630438739869" />
-      <entry key="S5" value="1.3310222275988493" />
-      <entry key="S10" value="1.5753453116162932" />
-      <entry key="S30" value="1.8317181766766302" />
-      <entry key="S60" value="1.9119858423663352" />
-      <entry key="M2" value="1.9549795549163456" />
-      <entry key="M5" value="1.98385710174138" />
-      <entry key="M10" value="2.0774576671528053" />
-      <entry key="M15" value="2.3007805875841836" />
-      <entry key="M30" value="3.098300073313499" />
-      <entry key="H1" value="4.0943814858767755" />
-      <entry key="H2" value="4.89372724610215" />
-      <entry key="H4" value="5.420837022023543" />
-      <entry key="D1" value="8.505497485720571" />
-      <entry key="W1" value="12.065085944671887" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="2.7400826205855588E-185" />
+      <entry key="M2" value="7.400851889354937E-93" />
+      <entry key="M5" value="2.131896829314481E-37" />
+      <entry key="M10" value="6.810203372790018E-19" />
+      <entry key="M15" value="1.0938567980223928E-12" />
+      <entry key="M30" value="2.1363190350446724E-6" />
+      <entry key="H1" value="0.003399848940052387" />
+      <entry key="H2" value="0.14101828163719188" />
+      <entry key="H4" value="0.9202041329140549" />
+      <entry key="D1" value="6.329013548739763" />
+      <entry key="W1" value="11.566254634194905" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="4.566578414615972E-10" />
-      <entry key="MS500" value="0.023874701290865614" />
-      <entry key="S2" value="2.26799441169551" />
-      <entry key="S5" value="8.321162706573446" />
-      <entry key="S10" value="15.831432662116644" />
-      <entry key="S30" value="27.559934280867335" />
-      <entry key="S60" value="32.241624431596584" />
-      <entry key="M2" value="34.982827024284944" />
-      <entry key="M5" value="37.842349988127346" />
-      <entry key="M10" value="46.88832578788839" />
-      <entry key="M15" value="62.38552372609091" />
-      <entry key="M30" value="110.70829499268753" />
-      <entry key="H1" value="167.8809121553874" />
-      <entry key="H2" value="212.99804839978853" />
-      <entry key="H4" value="242.41750485699137" />
-      <entry key="D1" value="395.34057776343974" />
-      <entry key="W1" value="569.2842795597037" />
+      <entry key="MS100" value="0.005645452208594599" />
+      <entry key="MS500" value="0.44244034480701067" />
+      <entry key="S2" value="1.3156517593799029" />
+      <entry key="S5" value="1.6853398087067037" />
+      <entry key="S10" value="1.8348160330741319" />
+      <entry key="S30" value="1.9430841716817127" />
+      <entry key="S60" value="1.9713031469131967" />
+      <entry key="M2" value="1.985965271060794" />
+      <entry key="M5" value="2.063674237146356" />
+      <entry key="M10" value="2.5133314098146085" />
+      <entry key="M15" value="3.132391811688672" />
+      <entry key="M30" value="4.7049874847767255" />
+      <entry key="H1" value="6.471776146401509" />
+      <entry key="H2" value="14.256727094083208" />
+      <entry key="H4" value="52.88932238958725" />
+      <entry key="D1" value="318.0137395491773" />
+      <entry key="W1" value="573.9173690723451" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -88,39 +137,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.BasicMovements.executor": "Run",
-    "Python.FaceTracking.executor": "Run",
-    "Python.ImageCapture.executor": "Run",
-    "Python.KeyPressModule.executor": "Run",
-    "Python.KeyboardControl.executor": "Run",
-    "Python.KeyboardControlIImageCapture.executor": "Run",
-    "Python.Mapping.executor": "Run",
-    "Python.PIDControl.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/johnl/PycharmProjects/PythonProject/Resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.BasicMovements.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FaceTracking.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ImageCapture.executor&quot;: &quot;Run&quot;,
+    &quot;Python.KeyPressModule.executor&quot;: &quot;Run&quot;,
+    &quot;Python.KeyboardControl.executor&quot;: &quot;Run&quot;,
+    &quot;Python.KeyboardControlIImageCapture.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Mapping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PIDControl.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.facetracking.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johnl/PycharmProjects/PythonProject/Resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\johnl\PycharmProjects\PythonProject\Resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\johnl\PycharmProjects\PythonProject" />
+      <recent name="C:\Users\johnl\PycharmProjects\PythonProject\BasicPrograms" />
+      <recent name="C:\Users\johnl\PycharmProjects\PythonProject\MovementGUI" />
+      <recent name="C:\Users\johnl\PycharmProjects\PythonProject\IntroPrograms" />
     </key>
   </component>
   <component name="SharedIndexes">
